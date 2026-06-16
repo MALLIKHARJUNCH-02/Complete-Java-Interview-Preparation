@@ -1,0 +1,30 @@
+SQL
+
+
+Priority 1
+----------
+Joins
+Group By
+Having
+Subqueries
+
+Priority 2
+----------
+CTE
+Window Functions
+Indexes
+Constraints
+
+Priority 3
+----------
+Transactions
+Normalization
+Database Design
+Query Optimization
+
+Priority 4
+----------
+Stored Procedures
+Triggers
+Views
+DCL/TCL
