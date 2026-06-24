@@ -1,4 +1,4 @@
-# Top 100 Java Interview Quiz Questions
+# Java Interview Quiz Questions
 
 ## 1. Why is Java called Platform Independent?
 

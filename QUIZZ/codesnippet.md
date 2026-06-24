@@ -1,5 +1,6 @@
 # Java Code Snippet Interview Questions
 
+
 ## 1. What is the output?
 
 ```java

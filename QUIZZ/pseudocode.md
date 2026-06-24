@@ -1,4 +1,3 @@
-
 ## 1. What is the Output?
 
 ```text
