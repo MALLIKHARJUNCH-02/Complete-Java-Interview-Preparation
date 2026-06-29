@@ -1,0 +1,549 @@
+Programming class Programs
+--------------------------
+
+1) c - program to perform addition of two numbers.
+
+#include<stdio.h>
+
+int main(){
+    int a,b;
+
+    printf("Enter the value of a : ");
+    scanf("%d",&a);
+
+    printf("Enter the value of b : ");
+    scanf("%d",&b);
+
+    int sum = a + b;
+
+    printf("Sum of %d and %d is : %d",a,b,sum);
+
+    return 0;
+}
+
+-------------------------------------------------------------------------------------
+2) c - program to Print Multiplication and Subtraction of two numbers two numbers.
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+
+    printf("Enter the value of a : ");
+    scanf("%d", &a);
+
+    printf("Enter the value of b : ");
+    scanf("%d", &b);
+
+    int mul = a * b;
+
+    int sub = a - b;
+
+    printf("The Multiplication of %d and %d is : %d\n", a, b, mul);
+    printf("The Subtraction of %d and %d is : %d\n", a, b, sub);
+
+    return 0;
+}
+
+------------------------------------------------------------------------------------
+
+3) c - program to perform Arithmetic operations of a two numbers.
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+
+    printf("Enter the value of a : ");
+    scanf("%d", &a);
+
+    printf("Enter the value of b : ");
+    scanf("%d", &b);
+
+    int add = a + b;
+    int mul = a * b;
+    int diff = a - b;
+    int mod = a % b;
+    int div = a / b;
+
+    printf("Addition of %d and %d is : %d\n", a, b, add);
+    printf("Multiplication of %d and %d is : %d\n", a, b, mul);
+    printf("Difference of %d and %d is : %d\n", a, b, diff);
+    printf("Modular of %d and %d is : %d\n", a, b, mod);
+    printf("Division of %d and %d is : %d\n", a, b, div);
+
+    return 0;
+}
+
+
+--------------------------------------------------------------------------------------------
+
+4) c - program to print swapping of two numbers using third variable.
+
+#include <stdio.h>
+int main()
+{
+
+    int a, b;
+    printf("Enter The A value : ");
+    scanf("%d", &a);
+
+    printf("Enter the value of b : ");
+    scanf("%d", &b);
+
+    printf("Before Swapping ->  a : %d | b : %d \n", a, b);
+
+    int temp = a;
+    a = b;
+    b = temp;
+
+    printf("After Swapping ->  a : %d | b : %d \n", a, b);
+    return 0;
+}
+
+----------------------------------------------------------------------------------
+
+5) c - program to check the given number is Even or Odd.
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    printf("Enter the Number : ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0)
+    {
+        printf("%d is Even Number", num);
+    }
+    else
+    {
+        printf("%d is Odd Number", num);
+    }
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------
+
+6) c - program to print on which subject student got highest marks.
+
+#include <stdio.h>
+
+int main()
+{
+    int java, sql, html;
+
+    printf("Enter the Marks Obtain In Java : ");
+    scanf("%d", &java);
+
+    printf("Enter the Marks Obtain In SQL : ");
+    scanf("%d", &sql);
+
+    printf("Enter the Marks Obtain In HTML : ");
+    scanf("%d", &html);
+
+    if (java >= sql && java >= html)
+    {
+        printf("Java has Highese Score : %d ", java);
+    }
+    else if (sql >= java && sql >= html)
+    {
+        printf("SQL Has Highest Score : %d ", sql);
+    }
+    else
+    {
+        printf("HTML Has Highest Score : %d ", html);
+    }
+
+    return 0;
+}
+
+
+----------------------------------------------------------------------------
+7) c - program to print student grade based on student subject marks.
+
+#include <stdio.h>
+
+int main()
+{
+    int java, sql, html, js, rjs;
+
+    printf("Enter The Java Marks : ");
+    scanf("%d", &java);
+
+    printf("Enter The SQL Marks : ");
+    scanf("%d", &sql);
+
+    printf("Enter The html Marks : ");
+    scanf("%d", &html);
+
+    printf("Enter The JavaScript Marks : ");
+    scanf("%d", &js);
+
+    printf("Enter The Reactjs Marks : ");
+    scanf("%d", &rjs);
+
+    int total = java + html + sql + js + rjs;
+
+    int avg = total / 5;
+
+    if (avg >= 90)
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("Grade O");
+    }
+    else if (avg >= 80)
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("Grade A");
+    }
+    else if (avg >= 70)
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("Grade B");
+    }
+    else if (avg >= 60)
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("Grade C");
+    }
+    else if (avg >= 50)
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("Grade D");
+    }
+    else if (avg >= 40)
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("Grade E");
+    }
+    else
+    {
+        printf("Total Marks : %d and Average : %d \n", total, avg);
+        printf("FAIL");
+    }
+}
+
+---------------------------------------------------------------------------------
+
+8) c - program to find roots of Quadratic equation.
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+int main()
+{
+    float a, b, c, root1, root2;
+
+    printf("Enter the Value of a : ");
+    scanf("%f", &a);
+
+    printf("Enter the Value of b : ");
+    scanf("%f", &b);
+
+    printf("Enter the Value of c : ");
+    scanf("%f", &c);
+
+    if (a == 0)
+    {
+        printf("Not a Quadratic Equation");
+    }
+    else
+    {
+        float d = (b * b) - (4 * a * c);
+
+        if (d == 0)
+        {
+            printf("Roots are Real and Equal\n");
+
+            root1 = -b / (2 * a);
+            root2 = -b / (2 * a);
+
+            printf("Root 1 : %f | Root 2 : %f\n", root1, root2);
+        }
+        else if (d > 0)
+        {
+            printf("Roots are Real and Different\n");
+            root1 = (-b + sqrt(d)) / (2 * a);
+            root2 = (-b - sqrt(d)) / (2 * a);
+            printf("Root 1 : %f | Root 2 : %f\n", root1, root2);
+        }
+        else
+        {
+            printf("Roots are imaginary");
+        }
+    }
+
+    return 0;
+}
+
+
+---------------------------------------------------------------------------------
+
+9) c - program to print student grade based of subject marks if any 
+    subject has less than 35 student will be fail.
+
+    #include <stdio.h>
+
+int main()
+{
+    int java, sql, html, js, rjs;
+
+    printf("Enter The Java Marks : ");
+    scanf("%d", &java);
+
+    printf("Enter The SQL Marks : ");
+    scanf("%d", &sql);
+
+    printf("Enter The html Marks : ");
+    scanf("%d", &html);
+
+    printf("Enter The JavaScript Marks : ");
+    scanf("%d", &js);
+
+    printf("Enter The Reactjs Marks : ");
+    scanf("%d", &rjs);
+
+    int total = java + html + sql + js + rjs;
+
+    int avg = total / 5;
+
+    if (java >= 35 && sql >= 35 && html >= 35 && js >= 35 && rjs >= 35)
+    {
+
+        if (avg >= 90)
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("Grade O");
+        }
+        else if (avg >= 80)
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("Grade A");
+        }
+        else if (avg >= 70)
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("Grade B");
+        }
+        else if (avg >= 60)
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("Grade C");
+        }
+        else if (avg >= 50)
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("Grade D");
+        }
+        else if (avg >= 40)
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("Grade E");
+        }
+        else
+        {
+            printf("Total Marks : %d and Average : %d \n", total, avg);
+            printf("FAIL");
+        }
+    }
+    else
+    {
+        printf("FAIL");
+    }
+}
+
+--------------------------------------------------------------------------------------------
+
+10) c - program to check given number is Prime or Not.
+
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter The Number : ");
+    scanf("%d", &num);
+
+    if (num <= 1)
+    {
+        printf("Not Prime");
+        return 0;
+    }
+
+    for (int i = 2; i <= num / 2; i++)
+    {
+        if (num % i == 0)
+        {
+            printf("Not Prime");
+            return 0;
+        }
+    }
+
+    printf("Prime");
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------
+11) c - program to print prime numbers between minimum and maximum.
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+
+int main()
+{
+    int min, max;
+
+    printf("Enter The Lower Range : ");
+    scanf("%d", &min);
+
+    printf("Enter The Higher Range : ");
+    scanf("%d", &max);
+
+    printf("Prime numbers between %d and %d are:\n", min, max);
+
+    for (int i = min; i <= max; i++)
+    {
+
+        if (i <= 1)
+        {
+            continue;
+        }
+
+        bool isPrime = true;
+        for (int j = 2; j <= sqrt(i); j++)
+        {
+            if (i % j == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------
+12) c - program to check the given Number is Perfect or not.
+
+#include <stdio.h>
+
+int main()
+{
+    int num;
+
+    printf("Enter The Number : ");
+    scanf("%d", &num);
+
+    int sum = 0;
+
+    for (int i = 1; i <= num / 2; i++)
+    {
+        if (num % i == 0)
+        {
+            sum += i;
+        }
+    }
+
+    if (sum == num)
+    {
+        printf("Given Number %d is Perfect Number\n", num);
+    }
+    else
+    {
+        printf("Given Number %d is Not a Prefect Number", num);
+    }
+}
+
+--------------------------------------------------------------------------------------------------
+13) c - program to print perfect numbers between minimum and maximum.
+
+#include <stdio.h>
+
+int main()
+{
+    int min, max;
+
+    printf("Enter the Lower Range : ");
+    scanf("%d", &min);
+
+    printf("Enter the Higher Range : ");
+    scanf("%d", &max);
+
+    printf("Perfect Numbers Between The %d and %d are : \n", min, max);
+
+    for (int i = min; i <= max; i++)
+    {
+
+        int sum = 0;
+        for (int j = 1; j <= i / 2; j++)
+        {
+            if (i % j == 0)
+            {
+                sum += j;
+            }
+        }
+
+        if (i == sum && i != 0)
+        {
+            printf("%d\t", i);
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------------
+
+14) c - program to perform swapping of two numbers without third variable.
+
+
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+
+    printf("Enter The Number a : ");
+    scanf("%d", &a);
+
+    printf("Enter The Number b : ");
+    scanf("%d", &b);
+
+    printf("Before Swapping -> a : %d | b : %d\n", a, b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+
+    //a = a * b;
+    //b = a / b;
+    //a = a / b;
+
+    // a = a ^ b;
+    // b = a ^ b;
+    // a = a ^ b;
+
+    printf("After Swapping ->  a : %d | b : %d\n", a, b);
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
