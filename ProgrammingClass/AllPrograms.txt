@@ -1,0 +1,133 @@
+
+1) Write a C - Program To perform Addition of Two Numbers.
+2) Write a C - Program To Print Multiplication of two Numbers abd Subtraction of Two Numbers.
+3) Write a C - Program To Perform Arithmetic operations of a two Numbers.
+4) Write a C - Program To Print Swapping of two Numbers Using #rd Variable.
+5) Write a C - Program To Check Given Number is Even Or Odd.
+6) Write a C - Program To check Highest Marks in Java, SQL, HTML.
+7) Write a C - Program To Print Student Grade Based On Student Subject Marks.
+
+8) Write a C - Program To Find Roots Of Quadratic Equations.
+9) Write a C - Program to print Student Grade By Checking Each Subject Marks if Marks >=35 on each subject Pass
+    else Fail
+10) Write a C - Program To Check Given Number is Prime Or Not.
+11) Write a C - Program To Print Prime Numbers Between Minimum to Maximum.
+12) Write a C - Program to Check The Given Number is Perfect Or Not.
+13) Write a C - Program To Print Perfect Numbers Between Minimum to Maximum.
+14) Write a C - Program To Print Swapping Of Two Numbers Without Using Third Variable.
+
+
+----->  Convert all these C Programs to Java.
+
+15) Write Java Program To Print Number Table.
+16) Write Java Program if Employee Salary is Greater then 25000 Calculate 13% of Tax Print Tax Amount and remaining
+    if Salary is Less than 25000 Print No Tax.
+17) Write Java Program To Calculate Tax Amount Based On Employee Annual Package
+
+        Annual Salary           Tax Percentage
+        -------------           --------------
+            <3L                     NoTax
+            >3L and <5L             5%
+            >5L and <7L             10%
+            >7L and <10L            15%
+            >10L and <15L           20%
+            >15L and <20L           25%
+            >20L and <30L           30%
+            >30L                    35% 
+18) Write Java Program To Print Ascii Values For A Given Character.
+19) Write Java Program To Print Lower Case Alphabets and Upper Case Alphabets.
+20) Write Java Program To Check Given Character is Vowel or Consonant.
+21) Write Java Program To Print Fibonacci Series.
+22) Write Java Program To Print Following Pattern
+    11 12 13 14 15
+    7  8  9  10
+    4  5  6
+    2  3
+    1
+23) Write Java Program To Perform Basic Calculator Operations of Two Numbers.
+24) Write Java Program To print Student Grade Using Switch case.
+25) Write Java Program To Print Prime Numbers in Fibonacci Series.
+26) Write Java Program To Print Sum of Digits of a Given Number.
+27) Write Java Program To Print Reverse Of a Number.
+28) Write Java Program To Check Given Number is Palindrome or Not.
+29) Write Java Program To Check Given Number is Happy Number or Not.
+30) Write Java Program To Check Given Year is Leap Year or Not.
+31) Write Java Program To Print Which Numbers are divided by 3 and 5 and both 3 and 5 in between Minimum and Maximum.
+32) Write Java Program To Check Given Number is ArmStrong or Not.
+33) Write Java Program To Print ArmStrong Numbers between Minimum and Maximum.
+
+
+34) Write Example Java Program For Single Inheritance.
+35) Write Example Java Program For Single Inheritance By Using Methods.
+36) Write Java Program To Perform Student Grade, Calculator Operations of Two Numbers and Print Prime Numbers Between Minimum to Maximum Using Single 
+    Single Inheritance.
+37) Write Example Java Program For Multilevel Inheritance.
+38) Write Example Java Program For Hierarchical inheritance.
+39) Write Java Program To Print Square Pattern.
+    
+    * * * *
+    * * * *
+    * * * *
+    * * * *
+40) Write Java Program To Print Right Angle Triangle.
+
+    *
+    * *
+    * * *
+    * * * *
+41) Write Example Java Program For Method Overloading. 
+42) Write Example Java Program For Method Overriding.
+43) Write Java Program To Print Downward Right Angle Triangle.
+
+    * * * *
+    * * *
+    * *
+    *
+
+44) Write Java Program To Print Half Diamond Pattern.
+
+        * 
+        * * 
+        * * * 
+        * * * * 
+        * * *
+        * * 
+        *
+
+45) Write Java Program To Print Right Side Right Angle Triangle
+
+            *
+        *   *
+    *   *   *
+*   *   *   *
+
+46) Write Java Program To Print Pyramid Pattern
+
+            *
+          *   *
+        *   *   *
+      *   *   *   * 
+
+47) Write Java Program To Print Right Sided Downward Right Angle Triangle
+
+        * * * *
+          * * *
+            * *
+              *
+
+48) Write Java Program To Print Downward Pyramid.
+
+        * * * *
+         * * *
+          * *
+           *
+
+49) Write Java Program To Print Following Pattern.
+
+                    1
+                1       2
+            1       2       3
+        1       2       3       4
+            3       2       1
+                3       2
+                    3   

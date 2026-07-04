@@ -1,0 +1,1472 @@
+Java Programs.
+
+1) Write Java Program To Print Number Table.
+
+import java.util.Scanner;
+
+public class NumberTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Number : ");
+        int num = sc.nextInt();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(num + " * " + i + " = " + (num * i));
+        }
+
+        sc.close();
+    }
+}
+
+------------------------------------------------------------------------------------
+
+2)Write Java Program if Employee Salary is Greater then 25000 Calculate 13% of Tax Print Tax Amount and remaining
+    if Salary is Less than 25000 Print No Tax.
+
+    import java.util.Scanner;
+
+public class EmployeeSalary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Employee Salary : ");
+        double salary = sc.nextDouble();
+        double taxAmount = 0;
+        if (salary >= 25000) {
+            taxAmount = salary * 0.13;
+        } else {
+            System.out.println("NO Tax");
+        }
+
+        System.out.println("Total Tax Amount : " + taxAmount);
+        System.out.println("Total In Hand Salary : " + (salary - taxAmount));
+
+        sc.close();
+    }
+}
+
+
+-------------------------------------------------------------------------------------------
+3) Write Java Program To Calculate Tax Amount Based On Employee Annual Package
+
+        Annual Salary           Tax Percentage
+        -------------           --------------
+            <3L                     NoTax
+            >3L and <5L             5%
+            >5L and <7L             10%
+            >7L and <10L            15%
+            >10L and <15L           20%
+            >15L and <20L           25%
+            >20L and <30L           30%
+            >30L                    35% 
+
+import java.util.Scanner;
+
+public class EmployeeTax {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter The Employee Salary : ");
+        double salary = sc.nextDouble();
+
+        double tax = 0.0;
+        double finalCtc;
+
+        if (salary >= 2000000) {
+            System.out.println("30% Tax");
+            tax = (30 / 100.0) * salary;
+
+        } else if (salary >= 1500000) {
+            System.out.println("25% Tax");
+            tax = (25 / 100.0) * salary;
+
+        } else if (salary >= 1000000) {
+            System.out.println("20% Tax");
+            tax = (20 / 100.0) * salary;
+
+        } else if (salary >= 700000) {
+            System.out.println("15% Tax");
+            tax = (15 / 100.0) * salary;
+
+        } else if (salary >= 500000) {
+            System.out.println("10% Tax");
+            tax = (10 / 100.0) * salary;
+
+        } else if (salary >= 300000) {
+            System.out.println("5% Tax");
+            tax = (5 / 100.0) * salary;
+
+        } else {
+            System.out.println("No Tax");
+            tax = 0.0;
+        }
+
+        finalCtc = salary - tax;
+
+        System.out.println("Tax Amount : " + tax);
+        System.out.println("Final CTC : " + finalCtc);
+
+        sc.close();
+    }
+}
+
+----------------------------------------------------------------------------------------
+
+4) Write Java Program To Print Ascii Values For A Given Character.
+import java.util.Scanner;
+
+public class ASCIIValue {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The character : ");
+        char ch = sc.next().charAt(0);
+
+        int ASCII = ch;
+        System.out.println(ch + " : " + ASCII);
+
+        sc.close();
+    }
+}
+
+------------------------------------------------------------------------------------------
+
+5) Write Java Program To Print Lower Case Alphabets and Upper Case Alphabets.
+
+public class PrintAlphabets {
+    public static void main(String[] args) {
+        System.out.println("Lower Case");
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            System.out.print(ch + "\t");
+        }
+        
+        System.out.println("\nUpper Case");
+        for (char ch = 'A'; ch <= 'Z'; ch++) {
+            System.out.print(ch + "\t");
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------
+
+6) Write Java Program To Check Given Character is Vowel or Consonant.
+
+import java.util.Scanner;
+
+public class VowelOrNot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Alphabet : ");
+        char ch = sc.next().charAt(0);
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            System.out.println(ch + " Is a Vowel");
+        } else {
+            System.out.println(ch + " Is a Consonant");
+        }
+
+        sc.close();
+    }
+}
+
+Using Switch Case
+-----------------
+
+import java.util.Scanner;
+
+public class VowelOrNotSwitch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The character : ");
+        char ch = sc.next().charAt(0);
+
+        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+            ch = Character.toLowerCase(ch);
+            switch (ch) {
+                // case 'a':
+                // System.out.println(ch + " Is Vowel");
+                // break;
+                // case 'e':
+                // System.out.println(ch + " Is Vowel");
+                // break;
+                // case 'i':
+                // System.out.println(ch + " Is Vowel");
+                // break;
+                // case 'o':
+                // System.out.println(ch + " Is Vowel");
+                // break;
+                // case 'u':
+                // System.out.println(ch + " Is Vowel");
+                // break;
+                // default:
+                // System.out.println(ch + " Is a consonant");
+                // break;
+
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    System.out.println(ch + " is a Vowel");
+                    break;
+
+                default:
+                    System.out.println(ch + " is a Consonant");
+            }
+        } else {
+            System.out.println(ch + " Is Not an Alphabet");
+        }
+
+        sc.close();
+    }
+}
+------------------------------------------------------------------------------------------
+
+7)  Write Java Program To Print Fibonacci Series.
+
+import java.util.Scanner;
+
+public class Fibonacci {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter The Higher Range : ");
+        int higherRange = sc.nextInt();
+
+        int first = 0;
+        int second = 1;
+
+        System.out.print(first + " ");
+        System.out.print(second + " ");
+
+        while (true) {
+            int next = first + second;
+
+            if (next > higherRange)
+                break;
+
+            System.out.print(next + " ");
+
+            first = second;
+            second = next;
+        }
+
+        sc.close();
+    }
+}
+
+---------------------------------------------------------------------------------------------
+
+8) Write Java Program To Print Following Pattern
+    11 12 13 14 15
+    7  8  9  10
+    4  5  6
+    2  3
+    1
+
+
+
+import java.util.Scanner;
+
+public class Pattern {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int rows = sc.nextInt();
+
+        int total = rows * (rows + 1) / 2;
+        int start = total - rows + 1;
+
+        for (int i = rows; i >= 1; i--) {
+
+            for (int j = 0; j < i; j++) {
+                System.out.print((start + j) + "\t");
+            }
+
+            System.out.println();
+
+            start = start - (i - 1);
+        }
+
+        sc.close();
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+9) Write Java Program To Perform Basic Calculator Operations of Two Numbers.
+
+import java.util.Scanner;
+
+public class CalculatorOperations {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Number One : ");
+        int number1 = sc.nextInt();
+
+        System.out.println("Enter The Number Two  ");
+        int number2 = sc.nextInt();
+
+        System.out.println("Enter the Operation Symbol");
+        System.out.println("Addition ( + )");
+        System.out.println("Difference ( - )");
+        System.out.println("Multiplication ( * )");
+        System.out.println("Division ( / )");
+
+        char ch = sc.next().charAt(0);
+
+        switch (ch) {
+            case '+':
+                System.out.println(
+                        "Addition Of Two Numbers " + number1 + " and " + number2 + " is "
+                                + (number1 + number2));
+                break;
+            case '-':
+                System.out.println(
+                        "Difference Of Two Numbers " + number1 + " and " + number2 + " is "
+                                + (number1 - number2));
+                break;
+            case '*':
+                System.out.println(
+                        "Multiplication Of Two Numbers " + number1 + " and " + number2 + " is "
+                                + (number1 * number2));
+                break;
+            case '/':
+                if (number2 != 0) {
+                    System.out.println(
+                            "Division Of Two Numbers " + number1 + " and " + number2 + " is "
+                                    + (((double) number1 / (double) number2)));
+                } else {
+                    System.out.println("Divide By 0 Not Possible");
+                }
+                break;
+
+            default:
+                System.out.println("Sorry! No related Operation Found");
+                break;
+        }
+
+        sc.close();
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------
+
+10) Write Java Program To print Student Grade Using Switch case.
+
+
+import java.util.Scanner;
+
+public class StudentGradeUsingSwitch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Student Details : ");
+
+        System.out.print("Enter The Subject 1 Marks : ");
+        int subject1 = sc.nextInt();
+
+        System.out.print("Enter The Subject 2 Marks : ");
+        int subject2 = sc.nextInt();
+
+        System.out.print("Enter The Subject 3 Marks : ");
+        int subject3 = sc.nextInt();
+
+        System.out.print("Enter The Subject 4 Marks : ");
+        int subject4 = sc.nextInt();
+
+        System.out.print("Enter The Subject 5 Marks : ");
+        int subject5 = sc.nextInt();
+
+        int sum = (subject1 + subject2 + subject3 + subject4 + subject5);
+
+        int avg = sum / 5;
+
+        char ch = ' ';
+        if (avg >= 90) {
+            ch = 'A';
+        } else if (avg >= 80) {
+            ch = 'B';
+        } else if (avg >= 70) {
+            ch = 'C';
+        } else if (avg >= 60) {
+            ch = 'D';
+        } else if (avg >= 50) {
+            ch = 'E';
+        } else {
+            ch = 'F';
+        }
+
+        System.out.println("Total Marks : " + sum);
+        System.out.println("Average : " + avg);
+        if (subject1 >= 35 && subject2 >= 35 && subject3 >= 35 && subject4 >= 35 && subject5 >= 35) {
+            switch (ch) {
+                case 'A':
+                    System.out.println("Grade A");
+                    break;
+
+                case 'B':
+                    System.out.println("Grade B");
+                    break;
+
+                case 'C':
+                    System.out.println("Grade C");
+                    break;
+
+                case 'D':
+                    System.out.println("Grade D");
+                    break;
+
+                case 'E':
+                    System.out.println("Grade E");
+                    break;
+
+                default:
+                    System.out.println("Fail");
+                    break;
+            }
+        } else {
+            System.out.println("Fail");
+        }
+
+        sc.close();
+
+    }
+}
+
+
+                                                                   or
+
+import java.util.Scanner;
+
+public class StudentGradeUsingSwitch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Student Details : ");
+
+        System.out.print("Enter The Subject 1 Marks : ");
+        int subject1 = sc.nextInt();
+
+        System.out.print("Enter The Subject 2 Marks : ");
+        int subject2 = sc.nextInt();
+
+        System.out.print("Enter The Subject 3 Marks : ");
+        int subject3 = sc.nextInt();
+
+        System.out.print("Enter The Subject 4 Marks : ");
+        int subject4 = sc.nextInt();
+
+        System.out.print("Enter The Subject 5 Marks : ");
+        int subject5 = sc.nextInt();
+
+        int sum = (subject1 + subject2 + subject3 + subject4 + subject5);
+
+        int avg = sum / 5;
+
+        System.out.println("Total Marks : " + sum);
+        System.out.println("Average : " + avg);
+        if (subject1 >= 35 && subject2 >= 35 && subject3 >= 35 && subject4 >= 35 && subject5 >= 35) {
+            switch (avg / 10) {
+                case 10:
+                case 9:
+                    System.out.println("Grade A");
+                    break;
+
+                case 8:
+                    System.out.println("Grade B");
+                    break;
+
+                case 7:
+                    System.out.println("Grade C");
+                    break;
+
+                case 6:
+                    System.out.println("Grade D");
+                    break;
+
+                case 5:
+                    System.out.println("Grade E");
+                    break;
+
+                default:
+                    System.out.println("Fail");
+                    break;
+            }
+        } else {
+            System.out.println("Fail");
+        }
+
+        sc.close();
+
+    }
+}
+
+------------------------------------------------------------------------------------------------
+
+11) Write Java Program To Print Prime Numbers in Fibonacci Series.
+
+
+import java.util.Scanner;
+
+class CheckPrime {
+
+    public boolean isPrime(int num) {
+
+        if (num <= 1) {
+            return false;
+        }
+
+        if (num == 2) {
+            return true;
+        }
+
+        if (num % 2 == 0) {
+            return false;
+        }
+
+        for (int i = 3; i <= Math.sqrt(num); i += 2) {
+
+            if (num % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
+}
+
+public class PrimeInFibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        CheckPrime cp = new CheckPrime();
+
+        System.out.println("Enter The Higher Range : ");
+        int higherRange = sc.nextInt();
+
+        int first = 0;
+        int second = 1;
+
+        while (true) {
+
+            int temp = first + second;
+            if (temp > higherRange) {
+                break;
+            }
+
+            if (cp.isPrime(temp)) {
+                System.out.print(temp + "\t");
+            }
+
+            first = second;
+            second = temp;
+        }
+
+        sc.close();
+    }
+}
+
+--------------------------------------------------------------------------------------------------------
+
+12) Write Java Program To Print Sum of Digits of a Given Number.
+
+
+import java.util.Scanner;
+
+public class SumOfDigitsOfANumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Number : ");
+        int number = sc.nextInt();
+
+        int original = number;
+
+        int sum = 0;
+
+        while (number != 0) {
+            int temp = number % 10;
+
+            sum += temp;
+
+            number /= 10;
+        }
+
+        System.out.println("Sum Of The Digits in the Number " + original + " is " + sum);
+        sc.close();
+    }
+}
+
+---------------------------------------------------------------------------------------------------
+
+13)  Write Java Program To Print Reverse Of a Number.
+
+import java.util.Scanner;
+
+public class ReverseOfANumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Number : ");
+        int number = sc.nextInt();
+
+        // 153
+        int original = number;
+        int rev = 0;
+        while (number != 0) {
+            int temp = number % 10;
+            rev = rev * 10 + temp;
+            number /= 10;
+        }
+
+        System.out.println("Original Number : " + original);
+        System.out.println("Reversed Number : " + rev);
+
+        sc.close();
+    }
+}
+
+
+-------------------------------------------------------------------------------------
+14) Write Java Program To Check Given Number is Palindrome or Not.
+
+import java.util.Scanner;
+
+public class PalindromeorNot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Number : ");
+        int number = sc.nextInt();
+
+        int original = number;
+
+        int reverse = 0;
+
+        while (number != 0) {
+            int temp = number % 10;
+            reverse = reverse * 10 + temp;
+            number /= 10;
+        }
+
+        if (reverse == original) {
+            System.out.println(original + " Is a Palindrome");
+        } else {
+            System.out.println(original + " Is Not a Palindrome");
+        }
+
+        sc.close();
+    }
+}
+
+
+-------------------------------------------------------------------------------------------
+
+15)  Write Java Program To Check Given Number is Happy Number or Not.
+
+
+import java.util.Scanner;
+
+public class HappyNumber {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the Number : ");
+        int num = sc.nextInt();
+
+        int original = num;
+
+        while (num >= 10) {
+
+            int sum = 0;
+
+            while (num > 0) {
+
+                int digit = num % 10;
+                sum += digit * digit;
+                num /= 10;
+            }
+
+            num = sum;
+        }
+
+        if (num == 1)
+            System.out.println(original + " is a Happy Number");
+        else
+            System.out.println(original + " is Not a Happy Number");
+        sc.close();
+    }
+}
+
+-----------------------------------------------------------------------------------------
+
+16)  Write Java Program To Check Given Year is Leap Year or Not.
+
+import java.util.Scanner;
+
+public class LeapYearorNot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Year : ");
+        int year = sc.nextInt();
+
+        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+            System.out.println(year + " Is a Leap Year");
+        } else {
+            System.out.println(year + " Is Not a Leap Year");
+        }
+
+        sc.close();
+    }
+}
+
+
+---------------------------------------------------------------------------------------------
+
+17) Write Java Program To Print Which Numbers are divided by 3 and 5 and both 3 and 5 in between Minimum and Maximum.
+
+import java.util.Scanner;
+
+public class Dividedby3and5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Lower Range : ");
+        int lowerRange = sc.nextInt();
+
+        System.out.println("Enter The Higher Range : ");
+        int higherRange = sc.nextInt();
+
+        System.out.println("Divide by 3");
+        for (int i = lowerRange; i <= higherRange; i++) {
+            if (i % 3 == 0) {
+                System.out.println(i + " ");
+            }
+        }
+
+        System.out.println("Divide by 5");
+        for (int i = lowerRange; i <= higherRange; i++) {
+            if (i % 5 == 0) {
+                System.out.println(i + " ");
+            }
+        }
+
+        System.out.println("Divide by 3 and 5");
+        for (int i = lowerRange; i <= higherRange; i++) {
+            if ((i % 3 == 0) && (i % 5 == 0)) {
+                System.out.println(i + " ");
+            }
+        }
+    }
+}
+
+
+----------------------------------------------------------------------------------------
+
+18) Write Java Program To Print ArmStrong Numbers between Minimum and Maximum.
+
+
+import java.util.Scanner;
+
+class CheckLength {
+    public int countDigits(int num) {
+
+        if (num == 0) {
+            return 1;
+        }
+        int count = 0;
+        while (num != 0) {
+            count++;
+            num /= 10;
+        }
+        return count;
+    }
+}
+
+class CheckArmstrong extends CheckLength {
+    public boolean checkArmstrongNumber(int num) {
+        if (num == 0) {
+            return true;
+        }
+        int original = num;
+        int sum = 0;
+        int digits = countDigits(num);
+        while (num != 0) {
+            int temp = num % 10;
+            sum += Math.pow(temp, digits);
+            num /= 10;
+        }
+
+        return sum == original;
+    }
+}
+
+public class ArmStrong {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CheckArmstrong cam = new CheckArmstrong();
+
+        System.out.println("Enter The Lower Range : ");
+        int lowerRange = sc.nextInt();
+
+        System.out.println("Enter The Higher Range : ");
+        int higherRange = sc.nextInt();
+
+        for (int i = lowerRange; i <= higherRange; i++) {
+            if (cam.checkArmstrongNumber(i)) {
+                System.out.print(i + "\t");
+            }
+        }
+
+        sc.close();
+    }
+}
+
+
+------------------------------------------------------------------------------------------
+
+19)   Write Java Program To Check Given Number is ArmStrong or Not.
+
+import java.util.Scanner;
+
+public class ArmStrongorNot {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the Number: ");
+        int number = sc.nextInt();
+
+        int original = number;
+        int numberCopy = number;
+        int len = 0;
+
+        if (numberCopy == 0) {
+            len = 1;
+        } else {
+            while (numberCopy != 0) {
+                numberCopy /= 10;
+                len++;
+            }
+        }
+
+        numberCopy = number;
+        int armStrong = 0;
+
+        if (numberCopy == 0) {
+            armStrong = 0;
+        } else {
+            while (numberCopy != 0) {
+                int digit = numberCopy % 10;
+                armStrong += (int) Math.pow(digit, len);
+                numberCopy /= 10;
+            }
+        }
+
+        if (original == armStrong) {
+            System.out.println(original + " Is an Armstrong Number");
+        } else {
+            System.out.println(original + " Is Not an Armstrong Number");
+        }
+
+        sc.close();
+    }
+}
+
+--------------------------------------------------------------------------------------------
+
+20)  Write Example Java Program For Single Inheritance.
+21) Write Example Java Program For Single Inheritance By Using Methods.
+
+import java.util.Scanner;
+
+class Employee {
+    int employeeId;
+    String employeeName;
+    double salary;
+    Scanner sc = new Scanner(System.in);
+
+    public void employeeDetails() {
+        System.out.println("Enter Employee Id : ");
+        employeeId = sc.nextInt();
+
+        sc.nextLine();
+        System.out.println("Enter Employee Name : ");
+        employeeName = sc.nextLine();
+
+        System.out.println("Enter Employee salary : ");
+        salary = sc.nextDouble();
+
+        sc.nextLine();
+    }
+
+    public void displayEmployeeDetails() {
+        System.out.println("Employee Id : " + employeeId);
+        System.out.println("Employee Name : " + employeeName);
+        System.out.println("Employee Salary : " + salary);
+    }
+
+}
+
+class SoftwareDeveloper extends Employee {
+    String programmingLanguage;
+    String projectName;
+
+    void developerDetails() {
+        System.out.print("Enter Programming Language: ");
+        programmingLanguage = sc.nextLine();
+
+        System.out.print("Enter Project Name: ");
+        projectName = sc.nextLine();
+    }
+
+    void displayDeveloperDetails() {
+        System.out.println("\n========== Developer Details ==========");
+        displayEmployeeDetails();
+        System.out.println("Programming Language : " + programmingLanguage);
+        System.out.println("Project Name         : " + projectName);
+    }
+}
+
+public class SingleInheritanceExample {
+    public static void main(String[] args) {
+
+        SoftwareDeveloper sd = new SoftwareDeveloper();
+
+        sd.employeeDetails();
+
+        sd.developerDetails();
+
+        sd.displayDeveloperDetails();
+    }
+}
+
+---------------------------------------------------------------------------------------------
+22) Write Java Program To Perform Student Grade, Calculator Operations of Two Numbers and Print Prime Numbers Between Minimum to Maximum Using Single 
+    Single Inheritance.
+23) Write Example Java Program For Multilevel Inheritance.
+
+import java.util.Scanner;
+
+class StudentGrade {
+
+    Scanner sc = new Scanner(System.in);
+
+    int subject1;
+    int subject2;
+    int subject3;
+    int subject4;
+    int subject5;
+
+    public void printStudentGrade() {
+
+        System.out.println("--------- Student Grade ---------");
+
+        System.out.println("Enter the Student Details : ");
+
+        System.out.print("Enter The Subject 1 Marks : ");
+        subject1 = sc.nextInt();
+
+        System.out.print("Enter The Subject 2 Marks : ");
+        subject2 = sc.nextInt();
+
+        System.out.print("Enter The Subject 3 Marks : ");
+        subject3 = sc.nextInt();
+
+        System.out.print("Enter The Subject 4 Marks : ");
+        subject4 = sc.nextInt();
+
+        System.out.print("Enter The Subject 5 Marks : ");
+        subject5 = sc.nextInt();
+
+        int sum = (subject1 + subject2 + subject3 + subject4 + subject5);
+
+        int avg = sum / 5;
+
+        System.out.println("Total Marks : " + sum);
+        System.out.println("Average : " + avg);
+        if (subject1 >= 35 && subject2 >= 35 && subject3 >= 35 && subject4 >= 35 && subject5 >= 35) {
+            switch (avg / 10) {
+                case 10:
+                case 9:
+                    System.out.println("Grade A");
+                    break;
+
+                case 8:
+                    System.out.println("Grade B");
+                    break;
+
+                case 7:
+                    System.out.println("Grade C");
+                    break;
+
+                case 6:
+                    System.out.println("Grade D");
+                    break;
+
+                case 5:
+                    System.out.println("Grade E");
+                    break;
+
+                default:
+                    System.out.println("Fail");
+                    break;
+            }
+        } else {
+            System.out.println("Fail");
+        }
+    }
+
+}
+
+class Calculator extends StudentGrade {
+
+    int number1;
+    int number2;
+
+    public void performCalculations() {
+
+        System.out.println("--------- Calculator ---------");
+
+        System.out.println("Enter The Number One : ");
+        number1 = sc.nextInt();
+
+        System.out.println("Enter The Number Two : ");
+        number2 = sc.nextInt();
+
+        System.out.println("Enter the Operation Symbol");
+        System.out.println("Addition ( + )");
+        System.out.println("Difference ( - )");
+        System.out.println("Multiplication ( * )");
+        System.out.println("Division ( / )");
+
+        char ch = sc.next().charAt(0);
+
+        switch (ch) {
+            case '+':
+                System.out.println(
+                        "Addition Of Two Numbers " + number1 + " and " + number2 + " is "
+                                + (number1 + number2));
+                break;
+            case '-':
+                System.out.println(
+                        "Difference Of Two Numbers " + number1 + " and " + number2 + " is "
+                                + (number1 - number2));
+                break;
+            case '*':
+                System.out.println(
+                        "Multiplication Of Two Numbers " + number1 + " and " + number2 + " is "
+                                + (number1 * number2));
+                break;
+            case '/':
+                if (number2 != 0) {
+                    System.out.println(
+                            "Division Of Two Numbers " + number1 + " and " + number2 + " is "
+                                    + (((double) number1 / (double) number2)));
+                } else {
+                    System.out.println("Divide By 0 Not Possible");
+                }
+                break;
+
+            default:
+                System.out.println("Sorry! No related Operation Found");
+                break;
+        }
+    }
+
+}
+
+class PrimeNumber extends Calculator {
+    int lowerRange;
+    int higherRange;
+
+    public void printPrime() {
+
+        System.out.println("--------- Prime Numbers In Range ---------");
+        System.out.println("Enter the Lower Range ");
+        lowerRange = sc.nextInt();
+
+        System.out.println("Enter the Higher Range ");
+        higherRange = sc.nextInt();
+
+        for (int i = lowerRange; i <= higherRange; i++) {
+            boolean isPrime = true;
+            if (i <= 1) {
+                continue;
+            }
+
+            for (int j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(i + "\t");
+            }
+        }
+    }
+
+}
+
+public class SingleInheritance {
+    public static void main(String[] args) {
+        PrimeNumber pn = new PrimeNumber();
+
+        pn.printStudentGrade();
+        pn.performCalculations();
+        pn.printPrime();
+
+        pn.sc.close();
+    }
+}
+
+
+---------------------------------------------------------------------------------------------
+ 
+24) Write Example Java Program For Hierarchical inheritance.
+
+import java.util.Scanner;
+
+class Employee {
+    int employeeId;
+    String employeeName;
+    double salary;
+
+    Scanner sc = new Scanner(System.in);
+
+    void employeeDetails() {
+        System.out.print("Enter Employee ID: ");
+        employeeId = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Employee Name: ");
+        employeeName = sc.nextLine();
+
+        System.out.print("Enter Salary: ");
+        salary = sc.nextDouble();
+        sc.nextLine();
+    }
+
+    void displayEmployeeDetails() {
+        System.out.println("Employee ID      : " + employeeId);
+        System.out.println("Employee Name    : " + employeeName);
+        System.out.println("Salary           : " + salary);
+    }
+}
+
+class SoftwareDeveloper extends Employee {
+
+    String programmingLanguage;
+    String projectName;
+
+    void developerDetails() {
+        System.out.print("Enter Programming Language: ");
+        programmingLanguage = sc.nextLine();
+
+        System.out.print("Enter Project Name: ");
+        projectName = sc.nextLine();
+    }
+
+    void displayDeveloperDetails() {
+        System.out.println("\n===== Software Developer =====");
+        displayEmployeeDetails();
+
+        System.out.println("Programming Language : " + programmingLanguage);
+        System.out.println("Project Name         : " + projectName);
+    }
+}
+
+class Tester extends Employee {
+
+    String testingTool;
+    String testingType;
+
+    void testerDetails() {
+        System.out.print("Enter Testing Tool: ");
+        testingTool = sc.nextLine();
+
+        System.out.print("Enter Testing Type: ");
+        testingType = sc.nextLine();
+    }
+
+    void displayTesterDetails() {
+        System.out.println("\n===== Tester =====");
+        displayEmployeeDetails();
+
+        System.out.println("Testing Tool : " + testingTool);
+        System.out.println("Testing Type : " + testingType);
+    }
+}
+
+public class HierarchicalInheritanceExample {
+
+    public static void main(String[] args) {
+
+        SoftwareDeveloper developer = new SoftwareDeveloper();
+
+        developer.employeeDetails();
+        developer.developerDetails();
+        developer.displayDeveloperDetails();
+
+        System.out.println();
+
+        Tester tester = new Tester();
+
+        tester.employeeDetails();
+        tester.testerDetails();
+        tester.displayTesterDetails();
+    }
+}
+
+-------------------------------------------------------------------------------------------------
+
+25) Write Java Program To Print Square Pattern.
+    
+    * * * *
+    * * * *
+    * * * *
+    * * * * 
+
+import java.util.Scanner;
+
+public class SolidSquarePattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The size");
+        int size = sc.nextInt();
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+-----------------------------------------------------------------------------------
+
+26) Write Java Program To Print Right Angle Triangle.
+
+    *
+    * *
+    * * *
+    * * * *
+
+import java.util.Scanner;
+
+public class RightAngleTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Height : ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+----------------------------------------------------------------------------------
+
+27) Write Example Java Program For Method Overloading. 
+
+
+class SalaryCalculator {
+
+    void calculateSalary(double basicSalary) {
+        System.out.println("Salary : " + basicSalary);
+    }
+
+    void calculateSalary(double basicSalary, double bonus) {
+        System.out.println("Salary : " + (basicSalary + bonus));
+    }
+
+    void calculateSalary(double basicSalary, double bonus, double incentive) {
+        System.out.println("Salary : " + (basicSalary + bonus + incentive));
+    }
+}
+
+public class MethodOverloadingExample {
+
+    public static void main(String[] args) {
+
+        SalaryCalculator sc = new SalaryCalculator();
+
+        sc.calculateSalary(50000);
+
+        sc.calculateSalary(50000, 5000);
+
+        sc.calculateSalary(50000, 5000, 3000);
+    }
+}
+
+-------------------------------------------------------------------------------------
+
+28) Write Example Java Program For Method Overriding.
+
+class Employee {
+
+    void calculateSalary() {
+        System.out.println("Employee Salary Calculation");
+    }
+}
+
+class SoftwareDeveloper extends Employee {
+
+    @Override
+    void calculateSalary() {
+        System.out.println("Software Developer Salary = ₹70,000");
+    }
+}
+
+class Tester extends Employee {
+
+    @Override
+    void calculateSalary() {
+        System.out.println("Tester Salary = ₹55,000");
+    }
+}
+
+public class MethodOverridingExample {
+
+    public static void main(String[] args) {
+
+        SoftwareDeveloper developer = new SoftwareDeveloper();
+        developer.calculateSalary();
+
+        Tester tester = new Tester();
+        tester.calculateSalary();
+    }
+}
+
+----------------------------------------------------------------------------------
+
+29) Write Java Program To Print Downward Right Angle Triangle.
+
+    * * * *
+    * * *
+    * *
+    *
+
+import java.util.Scanner;
+
+public class DownwardRightAngleTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Height : ");
+        int height = sc.nextInt();
+
+        for (int i = height; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+-------------------------------------------------------------------------------------
+
+30) Write Java Program To Print Half Diamond Pattern.
+
+        * 
+        * * 
+        * * * 
+        * * * * 
+        * * *
+        * * 
+        *
+
+import java.util.Scanner;
+
+public class HalfDiamondPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The N Value");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        for (int i = n - 1; i > 0; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+---------------------------------------------------------------------------------
+
+31) Write Java Program To Print Right Side Right Angle Triangle
+
+            *
+        *   *
+    *   *   *
+*   *   *   *
+
+import java.util.Scanner;
+
+public class RightSideRightAngleTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Height : ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < height - i - 1; j++) {
+                System.out.print("  ");
+            }
+
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
