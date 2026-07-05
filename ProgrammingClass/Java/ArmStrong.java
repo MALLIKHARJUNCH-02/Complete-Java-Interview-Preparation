@@ -25,7 +25,7 @@ class CheckArmstrong extends CheckLength {
         int digits = countDigits(num);
         while (num != 0) {
             int temp = num % 10;
-            sum += Math.pow(temp, digits);
+            sum += (int)Math.pow(temp, digits);
             num /= 10;
         }
 

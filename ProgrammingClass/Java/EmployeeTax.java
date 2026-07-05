@@ -11,7 +11,10 @@ public class EmployeeTax {
         double tax = 0.0;
         double finalCtc;
 
-        if (salary >= 2000000) {
+        if (salary >= 3000000) {
+            System.out.println("35% Tax");
+            tax = (35 / 100.0) * salary;
+        } else if (salary >= 2000000) {
             System.out.println("30% Tax");
             tax = (30 / 100.0) * salary;
 

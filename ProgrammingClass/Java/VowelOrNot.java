@@ -7,6 +7,8 @@ public class VowelOrNot {
         System.out.println("Enter the Alphabet : ");
         char ch = sc.next().charAt(0);
 
+        ch = Character.toLowerCase(ch);
+        
         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
             System.out.println(ch + " Is a Vowel");
         } else {

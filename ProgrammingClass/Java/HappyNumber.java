@@ -10,7 +10,7 @@ public class HappyNumber {
 
         int original = num;
 
-        while (num >= 10) {
+        while (num != 1 && num != 4) {
 
             int sum = 0;
 

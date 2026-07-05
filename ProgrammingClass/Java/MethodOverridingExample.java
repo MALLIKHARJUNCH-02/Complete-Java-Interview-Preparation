@@ -6,16 +6,12 @@ class Employee {
 }
 
 class SoftwareDeveloper extends Employee {
-
-    @Override
     void calculateSalary() {
         System.out.println("Software Developer Salary = ₹70,000");
     }
 }
 
 class Tester extends Employee {
-
-    @Override
     void calculateSalary() {
         System.out.println("Tester Salary = ₹55,000");
     }

@@ -34,16 +34,17 @@
             >15L and <20L           25%
             >20L and <30L           30%
             >30L                    35% 
+
 18) Write Java Program To Print Ascii Values For A Given Character.
 19) Write Java Program To Print Lower Case Alphabets and Upper Case Alphabets.
 20) Write Java Program To Check Given Character is Vowel or Consonant.
 21) Write Java Program To Print Fibonacci Series.
 22) Write Java Program To Print Following Pattern
-    11 12 13 14 15
-    7  8  9  10
-    4  5  6
-    2  3
-    1
+11 12 13 14 15
+7  8  9  10
+4  5  6
+2  3
+1
 23) Write Java Program To Perform Basic Calculator Operations of Two Numbers.
 24) Write Java Program To print Student Grade Using Switch case.
 25) Write Java Program To Print Prime Numbers in Fibonacci Series.
@@ -65,34 +66,34 @@
 38) Write Example Java Program For Hierarchical inheritance.
 39) Write Java Program To Print Square Pattern.
     
-    * * * *
-    * * * *
-    * * * *
-    * * * *
+* * * *
+* * * *
+* * * *
+* * * *
 40) Write Java Program To Print Right Angle Triangle.
 
-    *
-    * *
-    * * *
-    * * * *
+*
+* *
+* * *
+* * * *
 41) Write Example Java Program For Method Overloading. 
 42) Write Example Java Program For Method Overriding.
 43) Write Java Program To Print Downward Right Angle Triangle.
 
-    * * * *
-    * * *
-    * *
-    *
+* * * *
+* * *
+* *
+*
 
 44) Write Java Program To Print Half Diamond Pattern.
 
-        * 
-        * * 
-        * * * 
-        * * * * 
-        * * *
-        * * 
-        *
+* 
+* * 
+* * * 
+* * * * 
+* * *
+* * 
+*
 
 45) Write Java Program To Print Right Side Right Angle Triangle
 
@@ -103,31 +104,31 @@
 
 46) Write Java Program To Print Pyramid Pattern
 
-            *
-          *   *
-        *   *   *
-      *   *   *   * 
+      *
+    *   *
+  *   *   *
+*   *   *   * 
 
 47) Write Java Program To Print Right Sided Downward Right Angle Triangle
 
-        * * * *
-          * * *
-            * *
-              *
+* * * *
+  * * *
+    * *
+      *
 
 48) Write Java Program To Print Downward Pyramid.
 
-        * * * *
-         * * *
-          * *
-           *
+* * * *
+ * * *
+  * *
+   *
 
 49) Write Java Program To Print Following Pattern.
 
-                    1
-                1       2
-            1       2       3
-        1       2       3       4
-            3       2       1
-                3       2
-                    3   
+   1
+  1 2
+ 1 2 3
+1 2 3 4
+ 3 2 1
+  3 2
+   3   

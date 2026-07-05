@@ -60,7 +60,6 @@ public class EmployeeSalary {
             >15L and <20L           25%
             >20L and <30L           30%
             >30L                    35% 
-
 import java.util.Scanner;
 
 public class EmployeeTax {
@@ -74,7 +73,10 @@ public class EmployeeTax {
         double tax = 0.0;
         double finalCtc;
 
-        if (salary >= 2000000) {
+        if (salary >= 3000000) {
+            System.out.println("35% Tax");
+            tax = (35 / 100.0) * salary;
+        } else if (salary >= 2000000) {
             System.out.println("30% Tax");
             tax = (30 / 100.0) * salary;
 
@@ -162,6 +164,8 @@ public class VowelOrNot {
         System.out.println("Enter the Alphabet : ");
         char ch = sc.next().charAt(0);
 
+        ch = Character.toLowerCase(ch);
+        
         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
             System.out.println(ch + " Is a Vowel");
         } else {
@@ -676,7 +680,6 @@ public class PalindromeorNot {
 
 15)  Write Java Program To Check Given Number is Happy Number or Not.
 
-
 import java.util.Scanner;
 
 public class HappyNumber {
@@ -689,7 +692,7 @@ public class HappyNumber {
 
         int original = num;
 
-        while (num >= 10) {
+        while (num != 1 && num != 4) {
 
             int sum = 0;
 
@@ -771,6 +774,8 @@ public class Dividedby3and5 {
                 System.out.println(i + " ");
             }
         }
+
+        sc.close();
     }
 }
 
@@ -807,7 +812,7 @@ class CheckArmstrong extends CheckLength {
         int digits = countDigits(num);
         while (num != 0) {
             int temp = num % 10;
-            sum += Math.pow(temp, digits);
+            sum += (int)Math.pow(temp, digits);
             num /= 10;
         }
 
@@ -1237,10 +1242,10 @@ public class HierarchicalInheritanceExample {
 
 25) Write Java Program To Print Square Pattern.
     
-    * * * *
-    * * * *
-    * * * *
-    * * * * 
+* * * *
+* * * *
+* * * *
+* * * * 
 
 import java.util.Scanner;
 
@@ -1268,10 +1273,10 @@ public class SolidSquarePattern {
 
 26) Write Java Program To Print Right Angle Triangle.
 
-    *
-    * *
-    * * *
-    * * * *
+*
+* *
+* * *
+* * * *
 
 import java.util.Scanner;
 
@@ -1342,7 +1347,6 @@ class Employee {
 
 class SoftwareDeveloper extends Employee {
 
-    @Override
     void calculateSalary() {
         System.out.println("Software Developer Salary = ₹70,000");
     }
@@ -1350,7 +1354,6 @@ class SoftwareDeveloper extends Employee {
 
 class Tester extends Employee {
 
-    @Override
     void calculateSalary() {
         System.out.println("Tester Salary = ₹55,000");
     }
@@ -1372,10 +1375,10 @@ public class MethodOverridingExample {
 
 29) Write Java Program To Print Downward Right Angle Triangle.
 
-    * * * *
-    * * *
-    * *
-    *
+* * * *
+* * *
+* *
+*
 
 import java.util.Scanner;
 
@@ -1401,13 +1404,13 @@ public class DownwardRightAngleTriangle {
 
 30) Write Java Program To Print Half Diamond Pattern.
 
-        * 
-        * * 
-        * * * 
-        * * * * 
-        * * *
-        * * 
-        *
+* 
+* * 
+* * * 
+* * * * 
+* * *
+* * 
+*
 
 import java.util.Scanner;
 
@@ -1470,3 +1473,170 @@ public class RightSideRightAngleTriangle {
         sc.close();
     }
 }
+
+
+--------------------------------------------------------------------------------
+
+32)  Write Java Program To Print Pyramid Pattern 
+
+                                      ( Full Pyramid )
+
+import java.util.Scanner;
+
+public class PyramidPattern {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the height of the Pyramid : ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < height - i - 1; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+                          ( Spaced Star Pyramid )
+
+import java.util.Scanner;
+
+public class PyramidPattern {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the height of the Pyramid : ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < height - i - 1; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j <=i ; j++) {
+                System.out.print("*   ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+----------------------------------------------------------------------------
+
+33) Write Java Program To Print Right Sided Downward Right Angle Triangle.
+
+import java.util.Scanner;
+
+public class RightSidedDownwardRightAngleTriangle {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Height ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < i; j++) {
+                System.out.print("  ");
+            }
+
+            for (int j = height - 1; j >= i; j--) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+---------------------------------------------------------------------------------------
+
+34) Write Java Program To Print Downward Pyramid.
+
+                       (Downward Full Pyramid )
+                       ------------------------
+
+
+import java.util.Scanner;
+
+public class DownwardPyramid {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Height ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < i; j++) {
+                System.out.print("  ");
+            }
+            for (int j = 0; j < 2 * (height - i) - 1; j++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+
+                                (Downward Spaced Star Pyramid )
+                                -------------------------------
+
+import java.util.Scanner;
+
+public class DownwardPyramid {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Height ");
+        int height = sc.nextInt();
+
+        for (int i = 0; i < height; i++) {
+
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = height - 1; j >= i; j--) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+
+----------------------------------------------------------------------------------
+
+35) Write Java Program To Print Following Pattern.
+
+   1
+  1 2
+ 1 2 3
+1 2 3 4
+ 3 2 1
+  3 2
+   3   
+
+
