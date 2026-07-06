@@ -1,4 +1,5 @@
-Java Programs.
+Java Programs
+-------------
 
 1) Write Java Program To Print Number Table.
 

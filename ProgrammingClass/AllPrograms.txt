@@ -132,3 +132,308 @@
  3 2 1
   3 2
    3   
+
+
+50) Write Example Java Program For Creating a Thread using Thread class.
+51) Write Example Java Program For Creating a Thread using Runnable Interface.
+52) Write Java Program to Perform Single Task By Using Single Thread To Find Average Of 
+    an Array.
+
+
+In Java, every program starts with the main thread. However, in the traditional 
+multithreading classification used in many Java textbooks, we usually count only 
+the user-created threads. Since this program creates only one thread (ArraySum) to 
+perform one task (calculating the array sum), it is classified as Single Task Using 
+Single Thread.
+
+Types of Performances in multi threading
+----------------------------------------
+1) Performing Single Task Using Single Thread
+2) Performing Multiple Tasks Using Single Thread
+3) Performing Single Task Using Multiple Threads
+4) Performing Multiple Tasks Using Multiple Threads
+
+----------------------------------------------------------------------------------------
+1)  Performing Single Task Using Single Thread - Example
+
+import java.util.Scanner;
+
+class ArraySum extends Thread {
+
+    int array[];
+    int sum;
+
+    public ArraySum(int[] array) {
+        this.array = array;
+    }
+
+    public void run() {
+
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        System.out.println("Array Sum : " + sum);
+    }
+}
+
+public class SingleTaskUsingSingleThread {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Array Length : ");
+        int arrayLength = sc.nextInt();
+
+        int[] array = new int[arrayLength];
+
+        System.out.println("Enter the Array elements : ");
+
+        for (int i = 0; i < arrayLength; i++) {
+            System.out.print("Enter Array Element [ " + i + " ] : ");
+            array[i] = sc.nextInt();
+        }
+
+        ArraySum as = new ArraySum(array);
+
+        as.start();
+
+        sc.close();
+    }
+}
+
+
+
+Note: Technically, every Java program has a main thread. However, in Java 
+multithreading examples and most academic materials, the classification counts 
+only the user-created threads. Therefore, this program is considered Single Task 
+Using Single Thread.
+
+---------------------------------------------------------------------------------------------
+
+2) Performing Multiple Tasks Using Single Thread.
+
+
+import java.util.Scanner;
+
+class ArrayOperations extends Thread {
+    int array[];
+
+    public ArrayOperations(int[] array) {
+        this.array = array;
+    }
+
+    public void run() {
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        System.out.println("Sum Of The Elements In The Array" + sum);
+        System.out.println("Even Numbers In The Array");
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                System.out.println(array[i]);
+            }
+        }
+
+        System.out.println("Average Of the Array : " + (sum / (double) array.length));
+
+    }
+}
+
+public class MultipleTasksUsingSingleThread {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Array length ");
+        int arrayLength = sc.nextInt();
+
+        int[] array = new int[arrayLength];
+
+        for (int i = 0; i < arrayLength; i++) {
+            System.out.print("Enter The Array element [  " + i + " ] : ");
+            array[i] = sc.nextInt();
+        }
+
+        ArrayOperations ao = new ArrayOperations(array);
+
+        ao.start();
+
+        sc.close();
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+
+3) Performing Single Task Using Multiple Threads.
+
+
+import java.util.Scanner;
+
+class ThreadOne extends Thread {
+    int[] array;
+    int start;
+    int end;
+
+    public ThreadOne(int[] array, int start, int end) {
+        this.array = array;
+        this.start = start;
+        this.end = end;
+    }
+
+    public void run() {
+
+        for (int i = start; i <= end; i++) {
+            System.out.println("Array Element [ " + i + " ] = " + array[i]);
+        }
+    }
+}
+
+class ThreadTwo extends Thread {
+    int[] array;
+    int start;
+    int end;
+
+    public ThreadTwo(int[] array, int start, int end) {
+        this.array = array;
+        this.start = start;
+        this.end = end;
+    }
+
+    public void run() {
+
+        for (int i = start; i <= end; i++) {
+            System.out.println("Array Element [ " + i + " ] = " + array[i]);
+        }
+
+    }
+}
+
+public class SingleTaskUsingMultipleThreads {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Array Length : ");
+        int arrayLength = sc.nextInt();
+        int[] array = new int[arrayLength];
+
+        System.out.println("Enter THe Array elements : ");
+        for (int i = 0; i < arrayLength; i++) {
+            System.out.print("Enter THe Array Element [ " + i + " ] : ");
+            array[i] = sc.nextInt();
+        }
+
+        int mid = arrayLength / 2;
+
+        ThreadOne tOne = new ThreadOne(array, 0, mid - 1);
+        ThreadTwo tTwo = new ThreadTwo(array, mid, arrayLength - 1);
+
+        tOne.start();
+        tTwo.start();
+
+        sc.close();
+    }
+
+}
+
+
+-------------------------------------------------------------------------------------------
+
+4) Performing Multiple Tasks Using Multiple Threads.
+
+
+import java.util.Scanner;
+
+class ArraySum extends Thread {
+    int[] array;
+    int sum;
+
+    public ArraySum(int[] array) {
+        this.array = array;
+    }
+
+    public void run() {
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        System.out.println("Sum Of Array elements : " + sum);
+    }
+}
+
+class ArrayAverage extends Thread {
+    int[] array;
+    int sum;
+
+    public ArrayAverage(int[] array) {
+        this.array = array;
+    }
+
+    public void run() {
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        System.out.println("Average Of the Array : " + (sum / (double) array.length));
+    }
+
+}
+
+class EvenNumbersInArray extends Thread {
+    int[] array;
+
+    public EvenNumbersInArray(int[] array) {
+        this.array = array;
+    }
+
+    public void run() {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                System.out.println("Even Element in Index [ " + i + " ] = " + array[i]);
+            }
+        }
+    }
+}
+
+public class MultipleTasksUsingMultipleThreads {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter The Array Length : ");
+        int arrayLength = sc.nextInt();
+
+        int[] array = new int[arrayLength];
+
+        System.out.println("Enter The Array Elements : ");
+
+        for (int i = 0; i < arrayLength; i++) {
+            System.out.println("Enter The Array element [ " + i + " ] : ");
+            array[i] = sc.nextInt();
+        }
+
+        ArraySum as = new ArraySum(array);
+        ArrayAverage av = new ArrayAverage(array);
+        EvenNumbersInArray en = new EvenNumbersInArray(array);
+
+        as.start();
+        av.start();
+        en.start();
+
+        sc.close();
+    }
+
+}
+
+
+------------------------------------------------------------------------------------------
+TO DO:
+-----
+Single Task Using Single Thread: Download one file.
+Multiple Tasks Using Single Thread: Bank account operations (deposit, withdraw, balance).
+Single Task Using Multiple Threads: Download a large movie by splitting it into parts.
+Multiple Tasks Using Multiple Threads: YouTube (video, audio, comments, ads) or an 
+                                        online shopping system (payment, invoice, 
+                                        email, inventory).
