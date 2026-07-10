@@ -1640,4 +1640,116 @@ public class DownwardPyramid {
   3 2
    3   
 
+import java.util.Scanner;
 
+public class Test {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the Height : ");
+        int height = sc.nextInt();
+
+        for (int i = 1; i <= height; i++) {
+
+            for (int j = 0; j <= height - i - 1; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+
+        for (int i = 0; i < height - 1; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = height - 1; j > i; j--) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+
+
+------------------------------------------------------------------------------------------
+
+36) Java Program To get name of the Thread.
+
+public class GetNameOfTheThread {
+    public static void main(String[] args) {
+        System.out.println("Current Running Thread is : " + Thread.currentThread().getName());
+    }
+}
+
+Current Running Thread is : main
+
+
+-----------------------------------------------------------------------------------------
+
+37) Java Program To Print user created Thread Name.
+
+class ThreadOne extends Thread {
+    public void run() {
+        System.out
+                .println("Current Executing Thread ( User Created Thread ) Name : " + Thread.currentThread().getName());
+    }
+}
+
+public class PrintUserCreatedThreadName {
+    public static void main(String[] args) {
+        ThreadOne tOne = new ThreadOne();
+
+        tOne.start();
+    }
+}
+
+Current Executing Thread ( User Created Thread ) Name : Thread-0
+-----------------------------------------------------------------------------------------
+
+38) Java Program To Set Thread Name.
+
+class ArraySumThread extends Thread {
+    public void run() {
+        int[] array = { 1, 2, 3, 4, 5 };
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+
+        System.out.println("Array Sum : " + sum);
+
+        System.out.println("Current Executing THread Name is : " + Thread.currentThread().getName());
+    }
+}
+
+public class SetThreadName {
+    public static void main(String[] args) {
+
+        ArraySumThread as = new ArraySumThread();
+        as.setName("ArraySumThread");
+        as.start();
+
+        Thread t = Thread.currentThread();
+
+        System.out.println("Before: " + t.getName());
+
+        t.setName("Mallikharjun");
+
+        System.out.println("After: " + t.getName());
+
+        System.out.println("Current Executing THread Name is : " + Thread.currentThread().getName());
+    }
+}
+
+
+Before: main
+Array Sum : 15
+After: Mallikharjun
+Current Executing THread Name is : ArraySumThread
+Current Executing THread Name is : Mallikharjun
