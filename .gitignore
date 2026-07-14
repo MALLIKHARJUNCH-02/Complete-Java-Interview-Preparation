@@ -1,6 +1,6 @@
 # Java compiled files
 *.class
-
+*.jar
 # Build folders
 out/
 build/
