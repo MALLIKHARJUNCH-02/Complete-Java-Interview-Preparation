@@ -1,5 +1,5 @@
 //15-07-2026 CRUD
-// To-Do : Retrive (select)
+// To-Do : Retrieve (select)
 
 import java.sql.*;
 import java.sql.Date;
