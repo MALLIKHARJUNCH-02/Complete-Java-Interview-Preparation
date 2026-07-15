@@ -1,3 +1,6 @@
+//15-07-2026 CRUD
+// To-Do : Retrive (select)
+
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -30,13 +33,17 @@ public class CRUD {
                 case 1:
                     System.out.println("Enter the Employee Id");
                     int emp_id = sc.nextInt();
+
                     sc.nextLine();
                     System.out.println("Enter The Employee Name");
                     String emp_name = sc.nextLine();
+
                     System.out.println("Enter The USer Department : ");
                     String department = sc.nextLine();
+
                     System.out.println("Enter The Salary");
                     double salary = sc.nextDouble();
+
                     // System.out.print("Enter Hire Date (yyyy-MM-dd) ex: (15-JAN-24): ");
                     // String inputDate = sc.nextLine();
 
@@ -74,8 +81,10 @@ public class CRUD {
                         case 1:
                             System.out.println("Enter The New Employee Id : ");
                             int newEmployeeId = sc.nextInt();
+
                             n = stmt.executeUpdate("UPDATE employees set emp_id = " + newEmployeeId + " where emp_id = "
                                     + updateEmployeeId);
+
                             if (n > 0) {
                                 System.out.println("Record Updated");
                             } else {
@@ -85,8 +94,10 @@ public class CRUD {
                         case 2:
                             System.out.println("Enter The New Employee Name: ");
                             String newEmployeeName = sc.nextLine();
+
                             n = stmt.executeUpdate("UPDATE employees set emp_name = '" + newEmployeeName
                                     + "' where emp_id = " + updateEmployeeId);
+
                             if (n > 0) {
                                 System.out.println("Record Updated");
                             } else {
@@ -97,6 +108,7 @@ public class CRUD {
                         case 3:
                             System.out.println("Enter The New Employee Department : ");
                             String newEmployeeDepartment = sc.nextLine();
+
                             n = stmt.executeUpdate("UPDATE employees set department = '" + newEmployeeDepartment
                                     + "' where emp_id = " + updateEmployeeId);
 
@@ -110,6 +122,7 @@ public class CRUD {
                         case 4:
                             System.out.println("Enter The New Employee Salary : ");
                             double newEmployeeSalary = sc.nextDouble();
+
                             n = stmt.executeUpdate("UPDATE employees set salary = " + newEmployeeSalary
                                     + " where emp_id = " + updateEmployeeId);
 
@@ -134,6 +147,7 @@ public class CRUD {
                         case 6:
                             System.out.println("Enter The New Employee City : ");
                             String newEmployeeCity = sc.nextLine();
+
                             n = stmt.executeUpdate("UPDATE employees set city = '" + newEmployeeCity
                                     + "'where emp_id = " + updateEmployeeId);
 
@@ -153,7 +167,9 @@ public class CRUD {
                 case 3:
                     System.out.println("Enter the Employee Id That Wanted to Delete");
                     int deleteEmployeeId = sc.nextInt();
+
                     n = stmt.executeUpdate("delete from employees where emp_id = " + deleteEmployeeId);
+
                     if (n > 0) {
                         System.out.println("Record Deleted");
                     } else {
