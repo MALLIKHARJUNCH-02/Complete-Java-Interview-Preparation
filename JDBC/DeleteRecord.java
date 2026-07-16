@@ -6,6 +6,7 @@ public class DeleteRecord {
 
         Connection con = null;
         Statement stmt = null;
+        Scanner sc = null;
 
         try {
             // Driver d = new oracle.jdbc.OracleDriver();
@@ -17,10 +18,10 @@ public class DeleteRecord {
             con = DriverManager.getConnection(url, username, password);
             stmt = con.createStatement();
 
-            Scanner sc = new Scanner(System.in);
+            sc = new Scanner(System.in);
             System.out.print("Enter The Employee Id Which You Want To Delete : ");
             int emp_id = sc.nextInt();
-            
+
             int n = stmt.executeUpdate("delete from employees where emp_id = " + emp_id);
 
             if (n > 0) {
@@ -39,6 +40,10 @@ public class DeleteRecord {
 
                 if (con != null) {
                     con.close();
+                }
+
+                if (sc != null) {
+                    sc.close();
                 }
             } catch (SQLException e) {
             }
