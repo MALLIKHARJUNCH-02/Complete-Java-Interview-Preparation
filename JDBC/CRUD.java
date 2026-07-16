@@ -2,7 +2,6 @@
 // To-Do : Retrieve (select)
 
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class CRUD {
@@ -10,18 +9,20 @@ public class CRUD {
         Connection con = null;
         Statement stmt = null;
         Scanner sc = null;
+        ResultSet rs = null;
         try {
             sc = new Scanner(System.in);
 
             System.out.println("Enter The Operation You Want to Perform On the Database");
-            System.out.println("Insert The Record -> Choice [ 1 ]");
-            System.out.println("Update The Record -> Choice [ 2 ]");
-            System.out.println("Delete the Record -> Choice [ 3 ]");
-            System.out.println("Choice -> ");
+            System.out.println("Insert The Record -> Choose [ 1 ]");
+            System.out.println("Update The Record -> Choose [ 2 ]");
+            System.out.println("Delete the Record -> Choose [ 3 ]");
+            System.out.println("Retrieve The Records -> Choose [ 4 ]");
+            System.out.println("Choose -> ");
             int choice = sc.nextInt();
 
-            Driver d = new oracle.jdbc.OracleDriver();
-            DriverManager.registerDriver(d);
+            // Driver d = new oracle.jdbc.OracleDriver();
+            // DriverManager.registerDriver(d);
 
             String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";
             String username = "chmallikharjun";
@@ -176,6 +177,68 @@ public class CRUD {
                         System.out.println("Record Deleted");
                     } else {
                         System.out.println("Record Not Deleted");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Enter The Retrieve Option That You Want To Perform");
+                    System.out.println("Retrieve All The Records -> Choose [ 1 ]");
+                    System.out.println("Retrieve The Single Record Based On Id -> Choose [ 2 ]");
+                    System.out.println("Retrieve The Records Based on the City - > Choose [ 3 ] ");
+                    System.out.print("Choice -> ");
+                    int retrieveChoice = sc.nextInt();
+
+                    sc.nextLine();
+
+                    switch (retrieveChoice) {
+                        case 1:
+                            rs = stmt.executeQuery("select * from employees");
+
+                            while (rs.next()) {
+                                System.out.print(rs.getInt("emp_id") + "\t");
+                                System.out.print(rs.getString("emp_name") + "\t");
+                                System.out.print(rs.getString("department") + "\t");
+                                System.out.print(rs.getDouble("salary") + "\t");
+                                System.out.print(rs.getDate("hire_date") + "\t");
+                                System.out.println(rs.getString("city"));
+                            }
+                            break;
+                        case 2:
+                            System.out.print("Enter The Employee Id : ");
+                            int retrieveEmployeeId = sc.nextInt();
+
+                            rs = stmt.executeQuery("select * from employees where emp_id = " + retrieveEmployeeId);
+
+                            if (rs.next()) {
+                                System.out.print(rs.getInt("emp_id") + "\t");
+                                System.out.print(rs.getString("emp_name") + "\t");
+                                System.out.print(rs.getString("department") + "\t");
+                                System.out.print(rs.getDouble("salary") + "\t");
+                                System.out.print(rs.getDate("hire_date") + "\t");
+                                System.out.println(rs.getString("city"));
+                            }
+                            break;
+
+                        case 3:
+                            System.out.print("Enter the Employee City : ");
+                            String retrieveEmployeeCity = sc.nextLine();
+
+                            rs = stmt.executeQuery(
+                                    "select * from employees where city = '" + retrieveEmployeeCity + "'");
+
+                            if (rs.next()) {
+                                System.out.print(rs.getInt("emp_id") + "\t");
+                                System.out.print(rs.getString("emp_name") + "\t");
+                                System.out.print(rs.getString("department") + "\t");
+                                System.out.print(rs.getDouble("salary") + "\t");
+                                System.out.print(rs.getDate("hire_date") + "\t");
+                                System.out.println(rs.getString("city"));
+                            }
+
+                            break;
+                        default:
+                            System.out.println("No Such Options Available");
+                            break;
                     }
                     break;
                 default:

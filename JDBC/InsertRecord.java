@@ -4,8 +4,8 @@ public class InsertRecord {
     public static void main(String[] args) throws SQLException {
 
         // 1) Register The Jdbc User
-        Driver d = new oracle.jdbc.OracleDriver();
-        DriverManager.registerDriver(d);
+        // Driver d = new oracle.jdbc.OracleDriver();
+        // DriverManager.registerDriver(d);
 
         // 2) Create ( or ) establish the connection
 

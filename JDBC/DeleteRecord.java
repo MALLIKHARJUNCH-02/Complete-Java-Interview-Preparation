@@ -8,8 +8,8 @@ public class DeleteRecord {
         Statement stmt = null;
 
         try {
-            Driver d = new oracle.jdbc.OracleDriver();
-            DriverManager.registerDriver(d);
+            // Driver d = new oracle.jdbc.OracleDriver();
+            // DriverManager.registerDriver(d);
 
             String url = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";
             String username = "chmallikharjun";
